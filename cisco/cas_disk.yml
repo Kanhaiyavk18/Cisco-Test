@@ -1,0 +1,24 @@
+server:
+  - !channel
+        port: 50053
+        insecure-mode: true
+
+instances:
+  - name: main
+
+    storages:
+      - !disk-storage &main-storage
+
+    services:
+      - !action-cache &main-action
+        storage: *main-storage
+        max-cached-refs: 2560000
+        allow-updates: true
+
+      - !cas
+        storage: *main-storage
+
+      - !bytestream
+        storage: *main-storage
+
+thread-pool-size: 1000
