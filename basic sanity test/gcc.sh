@@ -1,0 +1,17 @@
+# set recc env variables
+. ./recc_env.sh
+
+#run with recc
+gcc -c /auto/andlog/bgbot/1.c -o 1.o 2>&1 | tee recc_gcc_1.log
+#check the return status code if it's 0 then it's successfull else it failed
+if [ $? = 0 ];
+then
+    #increment environment vaariaable pass counter by 1
+    PASS=$((PASS+1))
+else
+    #increment environment variable fail counter by 1
+    FAIL=$((FAIL+1))
+fi
+#increment environment variable total counter by 1
+TOTAL=$((TOTAL+1))
+echo "$PASS ======= $FAIL ====== $TOTAL"

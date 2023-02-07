@@ -1,0 +1,11 @@
+$recc_env.sh
+
+export PATH=/auto/andatc/linux/recc/build/bin:$PATH
+export RECC_PROJECT_ROOT=$(cd .. && pwd)
+export RECC_SERVER=bgl-ads-1754:50051
+export RECC_CAS_SERVER=bgl-ads-1754:50053
+export RECC_INSTANCE=main
+export RECC_LOG_LEVEL=debug
+export RECC_VERBOSE=1
+export RECC_ENABLE_METRICS=1
+export RECC_SKIP_CACHE=0
